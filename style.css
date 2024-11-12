@@ -273,3 +273,89 @@ button:hover {
     var(--color-light-royal-blue-background)
   );
 }
+
+@media screen and (max-width: 680px) {
+
+  body {
+    display: block;
+  }
+
+  main {
+    flex-direction: column;
+    margin-inline: auto;
+    margin-block-start: -2rem;
+    border-start-start-radius: 0;
+    border-start-end-radius: 0;
+    max-inline-size: 500px;
+  }
+  
+  section {
+    inline-size: 100%;
+    border-start-start-radius: 0;
+    border-start-end-radius: 0;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .score-quality {
+    font-size: 1.8rem;
+  }
+
+  .results h2 {
+    left: 0;
+    margin-block-start: .6rem;
+  }
+
+  .score-circle {
+    margin-block-start: 2.1rem;
+    --diameter: 140px;
+    block-size: var(--diameter);
+    inline-size: var(--diameter);
+    font-size: 1.6rem;
+  }
+
+  .score {
+    font-size: 5.4rem;
+    line-height: 7rem;
+  }
+
+  .results .score-quality {
+    font-size: 2.4rem;
+    margin-block-start: 2.6rem;
+  }
+
+  .results p {
+    margin-block-start: -.8rem;
+    max-inline-size: unset;
+    letter-spacing: -.9px;
+    line-height: 1.2;
+    margin-block-end: .4rem;
+  }
+
+  .summary {
+    padding: 2.2rem 3.2rem;
+  }
+
+  ul {
+    margin-block-start: 2.2rem;
+  }
+
+  li {
+    font-size: 1.6rem;
+    padding-inline-start: 4.6rem;
+    padding-inline-end: 1.4rem;
+  }
+
+  li::before {
+    inset-inline-start: 14px;
+    inset-block-start: 50%;
+    transform: translateY(-37%);
+  }
+
+  button {
+    margin-block-start: 2.6rem;
+    margin-block-end: 1rem;
+  }
+}

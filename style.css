@@ -1,6 +1,8 @@
 /* CSS Reset */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -20,22 +22,245 @@ body {
   font-size: 1.6rem;
 }
 
-img, picture, video, canvas, svg, iframe {
+img,
+picture,
+video,
+canvas,
+svg,
+iframe {
   display: block;
   max-inline-size: 100%;
   block-size: auto;
 }
 
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
 /* Variables */
 
 :root {
-  
+  --color-light-red: hsl(0, 100%, 67%);
+  --color-light-red-background: hsla(0, 100%, 67%, 0.05);
+  --color-orangey-yellow: hsl(39, 100%, 56%);
+  --color-orangey-yellow-background: hsla(39, 100%, 56%, 0.05);
+  --color-green-teal: hsl(166, 100%, 37%);
+  --color-green-teal-background: hsla(166, 100%, 37%, 0.05);
+  --color-cobalt-blue: hsl(234, 85%, 45%);
+  --color-cobalt-blue-background: hsla(234, 85%, 45%, 0.05);
+  --color-light-slate-blue-background: hsl(252, 100%, 67%);
+  --color-light-royal-blue-background: hsl(241, 81%, 54%);
+  --color-violet-blue-circle: hsla(256, 72%, 46%, 1);
+  --color-persian-blue-circle: hsla(241, 72%, 46%, 0);
+  --color-white: hsl(0, 0%, 100%);
+  --color-pale-blue: hsl(221, 100%, 96%);
+  --color-light-lavender: hsl(241, 100%, 89%);
+  --color-dark-gray-blue: hsl(224, 30%, 27%);
+
+  --border-radius: 32px;
+}
+
+body {
+  font-size: 1.8rem;
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  display: grid;
+  place-content: center;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+main {
+  margin-block-start: 284px;
+  display: flex;
+  border-radius: var(--border-radius);
+  background-color: var(--color-white);
+  overflow: hidden;
+  box-shadow: 20px 30px 36px var(--color-pale-blue);
+}
+
+section {
+  inline-size: 368px;
+  background-color: var(--color-background-summary);
+  border-radius: var(--border-radius);
+  padding: 3.6rem 4rem;
+}
+
+/* Results card */
+
+.results {
+  background: linear-gradient(
+    to bottom,
+    var(--color-light-slate-blue-background) 0,
+    var(--color-light-royal-blue-background) 60%
+  );
+  text-align: center;
+  color: var(--color-light-lavender);
+}
+
+/* Just for pixel perfect design */
+.results h2 {
+  position: relative;
+  left: -3px;
+}
+
+.score-circle {
+  block-size: 200px;
+  inline-size: 200px;
+  margin: 3.2rem auto 2.5rem;
+  padding-block-start: 1rem;
+  border-radius: 50%;
+  background: linear-gradient(
+    var(--color-violet-blue-circle),
+    var(--color-light-royal-blue-background)
+  );
+  display: grid;
+  place-content: center;
+  color: hsla(241, 100%, 89%, 0.5);
+}
+
+.score {
+  color: var(--color-white);
+  font-weight: 800;
+  font-size: 7.2rem;
+  display: block;
+  line-height: 7.4rem;
+}
+
+.results .score-quality {
+  color: var(--color-white);
+  font-size: 3.2rem;
+  font-weight: 600;
+  margin-block: 2.8rem 1.6rem;
+  /* Just for pixel perfect design */
+  position: relative;
+  left: -2px;
+}
+
+.results p {
+  margin: 1.3rem auto 1.9rem;
+  max-inline-size: 25rem;
+  line-height: 1.26;
+}
+
+/* Summary card */
+
+.summary {
+  --color-background-summary: var(--color-white);
+  background-color: var(--color-background-summary);
+}
+
+.summary h2 {
+  color: var(--color-dark-gray-blue);
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  margin-block-start: 2.6rem;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  min-block-size: 5.4rem;
+  position: relative;
+  padding-inline-start: 4.8rem;
+  padding-inline-end: 1.6rem;
+}
+
+.summary-score {
+  margin-inline-end: 4px;
+  font-weight: 700;
+}
+
+.summary-label {
+  font-weight: 600;
+}
+
+/* Icon for all items */
+
+li::before {
+  content: var(--url-icon);
+  position: absolute;
+  inset-inline-start: 16px;
+  inset-block-start: 50%;
+  transform: translateY(-35%);
+}
+
+/* Reaction */
+
+li:has(#reaction) {
+  background-color: var(--color-light-red-background);
+  --url-icon: url(assets/images/icon-reaction.svg);
+}
+
+#reaction {
+  color: var(--color-light-red);
+}
+
+/* Memory */
+
+li:has(#memory) {
+  background-color: var(--color-orangey-yellow-background);
+  --url-icon: url(assets/images/icon-memory.svg);
+}
+
+#memory {
+  color: var(--color-orangey-yellow);
+}
+
+/* Verbal */
+
+li:has(#verbal) {
+  background-color: var(--color-green-teal-background);
+  --url-icon: url(assets/images/icon-verbal.svg);
+}
+
+#verbal {
+  color: var(--color-green-teal);
+}
+
+/* Visual */
+
+li:has(#visual) {
+  background-color: var(--color-cobalt-blue-background);
+  --url-icon: url(assets/images/icon-visual.svg);
+}
+
+#visual {
+  color: var(--color-cobalt-blue);
+}
+
+button {
+  margin-block-start: 1rem;
+  background-color: var(--color-dark-gray-blue);
+  color: var(--color-white);
+  border: none;
+  border-radius: 28px;
+  inline-size: 100%;
+  margin-block-start: 4.2rem;
+  min-block-size: 5.6rem;
 }

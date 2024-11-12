@@ -9,10 +9,44 @@
 
     <title>Frontend Mentor | Results summary component</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,500;0,700;0,800;1,500;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    Your Result 76 of 100 Great You scored higher than 65% of the people who have taken these tests.
-    Summary Reaction 80 / 100 Memory 92 / 100 Verbal 61 / 100 Visual 72 / 100 Continue
+    <main>
+      <section class="results">
+        <h2>Your Result</h2>
+        <div class="score-circle"><span class="score">76</span>of 100</div>
+        <p class="score-quality">Great</p>
+        <p>You scored higher than 65% of the people who have taken these tests.</p>
+      </section>
+      <section class="summary">
+        <h2>Summary</h2>
+        <ul>
+          <li>
+            <div class="summary-label" id="reaction">Reaction</div>
+            <div class="summary-full-score"><span class="summary-score">80</span> / 100</div>
+          </li>
+          <li>
+            <div class="summary-label" id="memory">Memory</div>
+            <div class="summary-full-score"><span class="summary-score">92</span> / 100</div>
+          </li>
+          <li>
+            <div class="summary-label" id="verbal">Verbal</div>
+            <div class="summary-full-score"><span class="summary-score">61</span> / 100</div>
+          </li>
+          <li>
+            <div class="summary-label" id="visual">Visual</div>
+            <div class="summary-full-score"><span class="summary-score">72</span> / 100</div>
+          </li>
+        </ul>
+        <button>Continue</button>
+      </section>
+    </main>
   </body>
 </html>

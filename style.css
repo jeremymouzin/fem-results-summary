@@ -89,6 +89,7 @@ h2 {
 
 main {
   margin-block-start: 284px;
+  margin-inline: 4rem;
   display: flex;
   border-radius: var(--border-radius);
   background-color: var(--color-white);
@@ -263,4 +264,12 @@ button {
   inline-size: 100%;
   margin-block-start: 4.2rem;
   min-block-size: 5.6rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(
+    var(--color-light-slate-blue-background),
+    var(--color-light-royal-blue-background)
+  );
 }

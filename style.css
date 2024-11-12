@@ -84,7 +84,7 @@ body {
   place-content: center;
 }
 
-h2 {
+h1, h2 {
   font-size: 2.4rem;
 }
 
@@ -299,7 +299,7 @@ button:hover {
     border-start-end-radius: 0;
   }
 
-  h2 {
+  h1, h2 {
     font-size: 1.8rem;
   }
   
